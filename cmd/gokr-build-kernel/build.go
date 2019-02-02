@@ -12,7 +12,7 @@ import (
 )
 
 // see https://www.kernel.org/releases.json
-var latest = "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.20.tar.xz"
+var latest = "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/snapshot/linux-5.0-rc4.tar.gz"
 
 const configAddendum = `
 CONFIG_ARCH_BCM2835=y 
@@ -1062,7 +1062,7 @@ func main() {
 		log.Fatal("untar: %v", err)
 	}
 
-	srcdir := strings.TrimSuffix(filepath.Base(latest), ".tar.xz")
+	srcdir := strings.TrimSuffix(filepath.Base(latest), ".tar.gz")
 
 	log.Printf("applying patches")
 	if err := applyPatches(srcdir); err != nil {

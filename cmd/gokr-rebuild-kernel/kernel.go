@@ -106,7 +106,7 @@ func main() {
 	}
 	defer os.RemoveAll(tmp)
 
-	cmd := exec.Command("go", "build", "github.com/gokrazy/kernel/cmd/gokr-build-kernel")
+	cmd := exec.Command("go", "build", "github.com/anisse/beatbox-kernel/cmd/gokr-build-kernel")
 	cmd.Dir = tmp
 	cmd.Env = append(os.Environ(), "GOOS=linux")
 	cmd.Stderr = os.Stderr
